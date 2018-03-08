@@ -62,8 +62,8 @@ public class FilaArray implements Fila {
 		if(EstaVazia()) {
 			throw new EFilaVazia();
 		}else {
-			o = Fila[i];
 			i = (i+1)%Fila.length;
+			o = Fila[i];
 		}
 		return o;
 	}
