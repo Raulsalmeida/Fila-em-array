@@ -4,7 +4,28 @@ public class FilaArray implements Fila {
 	private int f;
 	private int fc;
 	public Object Fila[];
+	public Object gotenks[];
 	
+	//CONSTRUTOR DO OBJETO
+	public FilaArray(int tamanho, int fc) {
+		Fila = new Object[tamanho];
+		this.fc =fc;
+	}
+	
+	//CRESCIMENTO DA FILA CHEIA
+	public Object[] crescimento(int fc) {
+		for (int i = 0; i < tamanho(); i++) {
+			
+			if(fc == 0) {
+			gotenks = new Object[tamanho()*2];
+			gotenks[i] = Fila[i];
+			}else {
+				gotenks = new Object[tamanho() + fc];
+				gotenks[i] = Fila[i];
+			}
+		}
+		return gotenks;
+	}
 	
 	//VERIFICAR TAMANHO DA FILA
 	public int tamanho() {
