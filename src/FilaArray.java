@@ -48,11 +48,13 @@ public class FilaArray implements Fila {
 	
 	
 	public void enfileirar(Object o) {
-		
+		Object Q[] = null;
+		int p;
 		if(tamanho() == Fila.length -1) {
-			
+			Fila = crescimento(fc);
 		}
-		
+		Fila[f] = o;
+		f = (f +1)%Fila.length;
 	}
 
 	
