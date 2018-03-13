@@ -3,33 +3,34 @@ public class FilaArray implements Fila {
 	private int i;
 	private int f;
 	private int fc;
-	public Object Fila[];
+	public Object fila[];
 	public Object gotenks[];
 	
 	//CONSTRUTOR DO OBJETO
 	public FilaArray(int tamanho, int fc) {
-		Fila = new Object[tamanho];
+		fila = new Object[tamanho];
 		this.fc =fc;
 	}
 	
 	//CRESCIMENTO DA FILA CHEIA
 	public Object[] crescimento(int fc) {
-		for (int i = 0; i < tamanho(); i++) {
-			
-			if(fc == 0) {
+		if(fc == 0) {
 			gotenks = new Object[tamanho()*2];
-			gotenks[i] = Fila[i];
-			}else {
-				gotenks = new Object[tamanho() + fc];
-				gotenks[i] = Fila[i];
-			}
+		}else {
+			gotenks = new Object[tamanho() + fc];
 		}
+		for (int e = 0; e < fila.length; e++) {	
+			gotenks[e] = fila[i];
+			i = (i+1)%fila.length;
+		}
+		i = 0;
+		f = fila.length -1;
 		return gotenks;
 	}
 	
 	//VERIFICAR TAMANHO DA FILA
 	public int tamanho() {
-		return (Fila.length - i + f)%Fila.length;
+		return (fila.length - i + f)%fila.length;
 	}
 	
 	//VERIFICAR SE A FILA ESTÁ VAZIA
@@ -42,17 +43,17 @@ public class FilaArray implements Fila {
 		if(EstaVazia()) {
 			throw new EFilaVazia();
 		}else {
-			return Fila[i];
+			return fila[i];
 		}
 	}
 	
 	
 	public void enfileirar(Object o) {
-		if(tamanho() == Fila.length -1) {
-			Fila = crescimento(fc);
+		if(tamanho() == fila.length -1) {
+			fila = crescimento(fc);
 		}
-		Fila[f] = o;
-		f = (f +1)%Fila.length;
+		fila[f] = o;
+		f = (f +1)%fila.length;
 	}
 
 	
@@ -62,8 +63,8 @@ public class FilaArray implements Fila {
 		if(EstaVazia()) {
 			throw new EFilaVazia();
 		}else {
-			i = (i+1)%Fila.length;
-			o = Fila[i];
+			i = (i+1)%fila.length;
+			o = fila[i];
 		}
 		return o;
 	}

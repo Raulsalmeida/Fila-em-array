@@ -61,24 +61,24 @@ public class Main {
                 case 3:
                 	try {
                     Object topo2 = fila.inicio();
-                    System.out.println("\n--->Seu elemento do topo � "+topo2+"!<---");
+                    System.out.println("\n--->Seu elemento do inicio � "+topo2+"!<---");
                 	}catch(EFilaVazia e1){
-                		System.out.println("Sua pilha est� vazia, n�o tem o que ver no topo dela");
+                		System.out.println("Sua fila est� vazia, n�o tem o que ver no topo dela");
                 	}
                     break;
                 
                 case 4:
                     int qtdElementos = fila.tamanho();
-                    System.out.println("Voc� tem "+qtdElementos+" na pilha!");
+                    System.out.println("Voc� tem "+qtdElementos+" na fila!");
                     break;
                 
                 case 5:
                     boolean situacao = fila.EstaVazia();
                     int qtd = fila.tamanho();
                     if (situacao==true){
-                        System.out.println("Sim! Pilha Vazia!");
+                        System.out.println("Sim! Fila Vazia!");
                     }else{
-                        System.out.println("N�o! a pilha n�o est� vazia. Cont�m "+ qtd +" elementos!");
+                        System.out.println("N�o! a fila n�o est� vazia. Cont�m "+ qtd +" elementos!");
                     }
                     break;
                 
